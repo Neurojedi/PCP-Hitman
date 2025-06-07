@@ -74,3 +74,21 @@ class BitBoard():
         turn_plane = torch.full((6,7), float(self.turn), dtype=torch.float32, device=device)
         x = torch.stack([p1, p2, turn_plane], dim=0).unsqueeze(0)  # shape (1,3,6,7)
         return x
+    
+    def __str__(self):
+        '''Return a human-readable ASCII representation of the board.'''
+        rows = []
+        for r in reversed(range(6)):
+            row_str = ''
+            for c in range(7):
+                bit = 1 << (r*7 + c)
+                if self.p1 & bit:
+                    row_str += 'X '
+                elif self.p2 & bit:
+                    row_str += 'O '
+                else:
+                    row_str += '. '
+            rows.append(row_str.strip())
+        # add column indices at bottom
+        indices = ' '.join(str(c) for c in range(7))
+        return '\n'.join(rows + [indices])
