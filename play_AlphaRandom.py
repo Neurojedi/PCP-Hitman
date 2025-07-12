@@ -26,7 +26,7 @@ from neuralnet.utils import state_to_tensor, get_valid_actions
 
 def load_model(path: str, device: str = "cpu") -> ConnectFourNet:
     """Load a trained model from the specified path."""
-    checkpoint = torch.load(path, map_location=device)
+    checkpoint = torch.load(path, map_location=device, weights_only=False)
     model = ConnectFourNet(device=device)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.to(device)
