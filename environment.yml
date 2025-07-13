@@ -1,0 +1,17 @@
+name: connect4
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.11  
+  - torch=2.5.1
+  - torchvision=0.20.1
+  - torchaudio=2.5.1
+  - matplotlib
+  - seaborn
+  - ipython
+  - numpy
+  - pip
+  - pip:
+      - torchinfo
+      - torchviz
