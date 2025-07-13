@@ -141,7 +141,7 @@ if __name__ == "__main__":
         help="Board‐evaluation heuristic for Minimax"
     )
     parser.add_argument(
-        "--num_games", type=int, default=500,
+        "--num_games", type=int, default=1000,
         help="Number of games to play"
     )
     args = parser.parse_args()
