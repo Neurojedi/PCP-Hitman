@@ -1,15 +1,19 @@
-
 After AlphaZero's impressive success in the arguably hardest combinatorial two player games,like Go and Chess, we want to find out whether it can help with yet another great challenge...connect four! :) 
 
+
 This repository contains the code to train a alphazero like model in connect four, as well as the option to play against different agents (alphazero, random, minimax, mcts) or to let them play against each other. 
+
 
 To install this repository you can first get the necessary packages running 
 
   pip install -r requirements.txt 
+  
 or if you're using conda
+
   conda env create -f environment.yml
 
 The repository is structured as follows:
+
 .
 ├── agents/                        # contains the different agents
 │   └── AlphaZeroAgent.py
