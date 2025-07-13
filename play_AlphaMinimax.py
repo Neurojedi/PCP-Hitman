@@ -123,7 +123,7 @@ def run_alpha_vs_minimax(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--model", type=str, default="weights/checkpoint_iter_6.pth",
+        "--model", type=str, default="weights/checkpoint_iter_7.pth",
         help="Path to the trained AlphaZero model"
     )
     parser.add_argument(
@@ -131,7 +131,7 @@ if __name__ == "__main__":
         help="Whether AlphaZero plays first. 1 = Alpha, 0 = Minimax"
     )
     parser.add_argument(
-        "--depth", type=int, default=4,
+        "--depth", type=int, default=16,
         help="Search depth for the Minimax agent"
     )
     parser.add_argument(
@@ -141,7 +141,7 @@ if __name__ == "__main__":
         help="Board‐evaluation heuristic for Minimax"
     )
     parser.add_argument(
-        "--num_games", type=int, default=100,
+        "--num_games", type=int, default=500,
         help="Number of games to play"
     )
     args = parser.parse_args()
