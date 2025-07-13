@@ -151,7 +151,7 @@ if __name__ == "__main__":
         help="Choose your player: 1 (X, goes first) or 2 (O, goes second). Default is 1."
     )
     parser.add_argument(
-        "--model", type=str, default="weights/checkpoint_iter_1.pth",
+        "--model", type=str, default="weights/checkpoint_iter_7.pth",
         help="Path to the trained model checkpoint."
     )
     args = parser.parse_args()
