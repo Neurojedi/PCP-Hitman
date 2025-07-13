@@ -3,40 +3,43 @@ After AlphaZero's impressive success in the arguably hardest combinatorial two p
 
 This repository contains the code to train a alphazero like model in connect four, as well as the option to play against different agents (alphazero, random, minimax, mcts) or to let them play against each other. 
 
+## Installation
 
 To install this repository you can first get the necessary packages running 
-
-  pip install -r requirements.txt 
+'''bash
+pip install -r requirements.txt 
   
 or if you're using conda
 
-  conda env create -f environment.yml
+'''bash
+conda env create -f environment.yml
 
 The repository is structured as follows:
 
 .
-├── agents/                        # contains the different agents
-│   └── AlphaZeroAgent.py
-│   └── MCTS.py
-│   └── minimax.py        
+├── agents/                        # Different agents
+│   ├── AlphaZeroAgent.py
+│   ├── MCTS.py
+│   ├── minimax.py        
 │   └── random.py
-├── neuralnet/                      # the neural network and network functions for training the AlphaZero agent
-│   └── ResNet.py                   # Network Architecture
-│   └── connect4_model_graph.png    # scheme of architecture
-│   └── utils.py                    # network helper functions   
+├── neuralnet/                     # Neural network and training utilities
+│   ├── ResNet.py                  # Network architecture
+│   ├── connect4_model_graph.png   # Architecture diagram
+│   └── utils.py                   # Helper functions   
 ├── tests/
-│   └── test_game_utils.py          # Tests for board logic, game mechanics
-│   └── test_mcts.py                # Tests for agent scoring and decision-making
-│   └── test_utils.py               # Tests network functions
-├── weights/                        # Checkpoints of trained AlphaZero agent
+│   ├── test_game_utils.py         # Tests for board logic and mechanics
+│   ├── test_mcts.py               # Tests for agent scoring and decision-making
+│   └── test_utils.py              # Tests for network functions
+├── weights/                       # Checkpoints of trained AlphaZero agents
 │   └── ... 
-├── Model.ipynb                     # summary of model architecture
-├── Results.ipynb                   # notebook used to plot performance results of the trained AlphaZero agent
-├── game_utils.py                   # Core game logic 
-├──play_Alpha.py                    # run to play against the AlphaZero agent yourself
-├──play_AlphaMinimax.py             # run to let the AlphaZero agent play against the Minimax agent
-├──play_AlphaRandom.py              # run to let the AlphaZero agent play against the random agent
-├── training.py                     # run to train a new AlphaZero agent 
-└── README.md                       # Project documentation (you are here)
+├── Model.ipynb                    # Summary of model architecture
+├── Results.ipynb                  # Plots and performance results
+├── game_utils.py                  # Core game logic 
+├── play_Alpha.py                  # Play against the AlphaZero agent
+├── play_AlphaMinimax.py           # AlphaZero vs. Minimax
+├── play_AlphaRandom.py            # AlphaZero vs. random agent
+├── training.py                    # Train a new AlphaZero agent 
+└── README.md                      # Project documentation (you are here)
+
 
                          
