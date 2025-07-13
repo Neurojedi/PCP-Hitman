@@ -168,9 +168,6 @@ def random_eval(model, device):
     result = normalized_values.tolist()
     return valuer, result
 
-def random(board, player, saved_state=None):
-
-    return PlayerAction(np.random.randint(0, 7)), saved_state  # Random action in range [0, 6]
 
 def get_move_MCTS(board, player, saved_state=None, num_simulations=1000):
     """
