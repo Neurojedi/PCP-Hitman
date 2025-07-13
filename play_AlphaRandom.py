@@ -26,7 +26,7 @@ from neuralnet.utils import state_to_tensor, get_valid_actions
 
 def load_model(path: str, device: str = "cpu") -> ConnectFourNet:
     """Load a trained model from the specified path."""
-    checkpoint = torch.load(path, map_location=device, weights_only=False)
+    checkpoint = torch.load(path, map_location=device)
     model = ConnectFourNet(device=device)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.to(device)
@@ -59,7 +59,7 @@ def make_model_predict_fn(model, device):
     return predict
 
 
-def run_alpha_vs_random(model, alpha_first=True, num_games=100, device="cpu"):
+def run_alpha_vs_random(model, alpha_first=True, num_games=1000, device="cpu"):
     results = {"AlphaZero": 0, "Random": 0, "Draw": 0}
     model_predict = make_model_predict_fn(model, device)
 
@@ -108,7 +108,7 @@ def run_alpha_vs_random(model, alpha_first=True, num_games=100, device="cpu"):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", type=str, default="weights/checkpoint_iter_1.pth",
+    parser.add_argument("--model", type=str, default="weights/checkpoint_iter_7.pth",
                         help="Path to the trained AlphaZero model")
     parser.add_argument("--alpha_first", type=int, choices=[0, 1], default=1,
                         help="Whether AlphaZero plays first. 1 = Alpha, 0 = Random")
