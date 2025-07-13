@@ -54,7 +54,7 @@ class Node:
                 
 
                 except ValueError:
-                # Ungültiger Zug (z. B. Spalte voll) → ingore this move
+                # invalid move → ingore this move
                     continue
         
 
