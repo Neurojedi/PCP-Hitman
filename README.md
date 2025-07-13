@@ -38,7 +38,7 @@ The repository is structured as follows:
     ├── Model.ipynb                    # Summary of model architecture
     ├── Results.ipynb                  # Plots and performance results
     ├── game_utils.py                  # Core game logic 
-    ├── play_Alpha.py                  # Play against the AlphaZero agent yourself
+    ├── main.py                  # Play against the AlphaZero agent yourself
     ├── play_AlphaMinimax.py           # AlphaZero vs. Minimax
     ├── play_AlphaRandom.py            # AlphaZero vs. random agent
     ├── training.py                    # Train a new AlphaZero agent 
